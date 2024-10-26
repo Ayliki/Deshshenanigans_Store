@@ -1,0 +1,35 @@
+/* Container for the Sort Dropdown */
+.sortDropdown {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Label for the Dropdown */
+.sortDropdown label {
+  font-weight: 600;
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+/* Dropdown Select Element */
+.dropdown {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+.dropdown option {
+  padding: 0.5rem;
+}

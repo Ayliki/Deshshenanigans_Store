@@ -1,0 +1,7 @@
+/* Shop Page Container */
+.shopContainer {
+    padding: 2rem;
+    background-color: #e0f7fa; 
+    text-align: center;
+    min-height: 100vh;
+}
