@@ -1,14 +1,16 @@
-import { useState } from "react"
-import ProductCard from "../../components/ProductCard/ProductCard"
-import cl from './styles.module.css'
-import productsData from "../../data/products";
+import { useState } from "react";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import Pagination from "../../components/Pagination/Pagination";
 import SortDropdown from "../../components/SortDropdown/SortDropdown";
+import productsData from "../../data/products";
+import { useWishlist } from "../../context/WishlistContext";
+import cl from './styles.module.css';
 import { Product } from "../../types/product";
 
 const ShopPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [sortedProducts, setSortedProducts] = useState<Product[]>(productsData);
+    const { addToWishlist, removeFromWishlist, wishlist } = useWishlist();
     const productsPerPage = 6;
 
     const indexOfLastProduct = currentPage * productsPerPage;
@@ -16,8 +18,7 @@ const ShopPage = () => {
     const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
     const handleSortChange = (sortType: string) => {
-        const productsCopy = [...productsData]; // Start with a fresh copy of the original data
-
+        const productsCopy = [...productsData];
         if (sortType === "price-low-high") {
             productsCopy.sort((a, b) => a.price - b.price);
         } else if (sortType === "price-high-low") {
@@ -27,10 +28,10 @@ const ShopPage = () => {
         } else if (sortType === "name-desc") {
             productsCopy.sort((a, b) => b.name.localeCompare(a.name));
         }
-
-        setSortedProducts(productsCopy); // Update sorted products
-        setCurrentPage(1); // Reset to the first page after sorting
+        setSortedProducts(productsCopy);
+        setCurrentPage(1);
     };
+
     return (
         <div className={cl.shopContainer}>
             <h2>Shop All Products</h2>
@@ -41,10 +42,15 @@ const ShopPage = () => {
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
             >
-                <ProductCard products={currentProducts} />
+                <ProductCard
+                    products={currentProducts}
+                    wishlist={wishlist}
+                    onAddToWishlist={addToWishlist}
+                    onRemoveFromWishlist={removeFromWishlist}
+                />
             </Pagination>
         </div>
-    )
-}
+    );
+};
 
-export default ShopPage
+export default ShopPage;

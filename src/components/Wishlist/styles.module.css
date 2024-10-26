@@ -1,0 +1,93 @@
+/* Wishlist Container */
+.wishlistContainer {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Wishlist Title */
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Empty Wishlist Message */
+.emptyWishlist {
+  color: #666;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* Wishlist Items List */
+.wishlistItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual Wishlist Item */
+.wishlistItem {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.wishlistItem:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Item Image */
+.itemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+/* Item Details */
+.itemDetails {
+  flex: 1;
+  text-align: left;
+}
+
+/* Item Name */
+.itemDetails h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Item Price */
+.itemPrice {
+  font-size: 1rem;
+  color: #ffcc00;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Remove Button */
+.removeButton {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.removeButton:hover {
+  background-color: #ff7875;
+}
