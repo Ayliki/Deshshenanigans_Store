@@ -13,6 +13,7 @@ const Navbar = () => {
                 <li><Link to="/" className={cl.link}>Home</Link></li>
                 <li><Link to="/shop" className={cl.link}>Shop</Link></li>
                 <li><Link to="/" className={cl.link}>Cart</Link></li>
+                <li><Link to="/wishlist" className={cl.link}>Wishlist</Link></li>
             </ul>
         </nav>
     )

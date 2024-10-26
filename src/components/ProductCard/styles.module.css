@@ -68,6 +68,21 @@ h3 {
     color: #ffcc00; 
 }
 
+.wishlistButton {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.wishlistButton:hover {
+    background-color: #ff7875;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 1000px) {
     .productsContainer {
