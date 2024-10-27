@@ -1,9 +1,9 @@
 /* Wishlist Container */
 .wishlistContainer {
   padding: 2rem;
-  background-color: #f9f9f9;
   min-height: 100vh;
   text-align: center;
+  background-color: #e0f7fa;
 }
 
 /* Wishlist Title */
